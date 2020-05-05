@@ -2,7 +2,6 @@
 def no_c(my_string):
     cpy = ""
     for char in my_string:
-        if char == "C" or char == "c":
-            char = ""
-        cpy += char
+        if char is not "C" and char is not "c":
+            cpy += char
     return(cpy)
