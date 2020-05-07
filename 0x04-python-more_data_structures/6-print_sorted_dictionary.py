@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 def print_sorted_dictionary(a_dictionary):
-    for k, v in sorted(a_dictionary.items()):
-            print("{}: {}".format(k, v))
+    for k in sorted(a_dictionary):
+            print("{}: {}".format(k, a_dictionary[k]))
