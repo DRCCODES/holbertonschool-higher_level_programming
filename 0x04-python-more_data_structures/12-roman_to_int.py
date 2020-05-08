@@ -22,3 +22,4 @@ def roman_to_int(roman_string):
                 past = curr
         romans = romans - goths * 2
         return romans
+    return 0
