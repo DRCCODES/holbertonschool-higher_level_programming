@@ -6,12 +6,12 @@ has_been_print = safe_print_integer(value)
 if not has_been_print:
 	print("{} is not an integer".format(value))
 
-value = -89
+value = 8.99999
 has_been_print = safe_print_integer(value)
 if not has_been_print:
 	    print("{} is not an integer".format(value))
 
-value = "Holberton"
+value = ["Holberton"]
 has_been_print = safe_print_integer(value)
 if not has_been_print:
 	    print("{} is not an integer".format(value))
