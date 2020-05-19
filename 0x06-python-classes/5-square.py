@@ -48,6 +48,8 @@ class Square:
     def my_print(self):
 
         """prints equal sized sided square"""
+        if self.size == 0:
+            print()
 
         for side in range(self.size):
             for oside in range(self.size):
