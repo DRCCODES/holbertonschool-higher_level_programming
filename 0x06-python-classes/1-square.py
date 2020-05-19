@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-""" Doc DOc For Class Square """
+""" Doc For Class Square """
 
 
-class Square():
+class Square:
+
+    """ Square Class Got 4 sides"""
 
     def __init__(self, size):
 
