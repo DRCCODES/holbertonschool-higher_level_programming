@@ -100,7 +100,7 @@ class Square():
         sq = []
 
         if self.__size == 0:
-            sq.appen("")
+            return ""
 
         for s in range(self.__position[1]):
             sq.append("\n")
