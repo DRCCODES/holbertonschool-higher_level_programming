@@ -47,6 +47,4 @@ class Square:
 
     def __new__(self, area):
         """ returns area of sq """
-        for i in range(1,area):
-            i += 1
-        return [i]
+        return [area]
