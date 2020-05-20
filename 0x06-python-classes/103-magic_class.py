@@ -5,7 +5,7 @@ import math
 
 class MagicClass:
     """ class with radius gets Area and Circumference """
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """get radius"""
         self.__radius = 0
         if type(radius) is not int and is not float:
