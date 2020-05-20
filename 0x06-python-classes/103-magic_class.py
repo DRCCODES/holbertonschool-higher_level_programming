@@ -7,10 +7,10 @@ class MagicClass:
     """ class with radius gets Area and Circumference """
     def __init__(self, radius):
         """get radius"""
-        self.radius = 0
-        if type(radius) is not float and is not int:
+        self.__radius = 0
+        if type(radius) is not int and is not float:
             raise TypeError("radius must be a number")
-        self.radius = radius
+        self.__radius = radius
 
     def area(self):
         """ Get area! """
