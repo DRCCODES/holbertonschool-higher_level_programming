@@ -85,7 +85,7 @@ class Square:
             print()
             return
 
-        if self.position[0] > 0 and self.position[1] > 0:
+        if self.position[0] >= 0 and self.position[1] >= 0:
             for s in range(self.position[1]):
                 print()
 
