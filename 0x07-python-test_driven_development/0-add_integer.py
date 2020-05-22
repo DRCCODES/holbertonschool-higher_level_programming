@@ -6,13 +6,9 @@ def add_integer(a, b=98):
 
     """ Addeds a + b and returns results """
 
-    if not isinstance(a,(int, b)):
-        raise TypeError("b must be an integer")
-    elif not isinstance(b,(int, a)):
+    if not isinstance(a,(int, float)):
         raise TypeError("a must be an integer")
-    elif a is type(float):
-        a = int(a)
-    elif b is type(float):
-        b = int(b)
+    elif not isinstance(b,(int, float)):
+        raise TypeError("b must be an integer")
 
-    return a + b
+    return int(a) + int(b)

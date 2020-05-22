@@ -1,0 +1,80 @@
+Doc for add_integer function
+
+
+add_integer adds to numbers. returns error if arguments given are not int or float
+
+>>> add_integer = __import__("0-add_integer").add_integer
+
+
+Ints & Floats
+add simple ints and floats using ''add_integer()''
+
+	>>> add_integer(0, 1)
+	1
+
+	>>> add_integer(10, 34)
+	44
+
+	>>> add_integer(1.11, 35.89)
+	36
+
+
+	Test Optional
+
+	>>> add_integer(423)
+	521
+
+	>>> add_integer(543.666)
+	641
+
+Neg Tests
+
+	>>> add_integer(-1234, 0)
+	-1234
+
+	>>> add_integer(23434, -23434.9)
+	0
+
+TypeErrors
+if a or b are not type int or float
+
+	>>> add_integer("Getter", 0)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+	
+	>>> add_integer(1, "Robot")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+
+	>>> add_integer([1,2,3], 4)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+
+	>>> add_integer(2, (1,2,3))
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+	
+	>>> add_integer(None, 2)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+
+Other Erroes
+
+	>>> add_integer(float('NaN'), 0)
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+
+	>>> add_integer(-float('inf'), 0)
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+        >>> add_integer(0, -float('inf'))
+        Traceback (most recent call last):
+        OverflowError: cannot convert float infinity to integer
+
+        >>> add_integer(float('inf'), 0)
+        Traceback (most recent call last):
+        OverflowError: cannot convert float infinity to integer
