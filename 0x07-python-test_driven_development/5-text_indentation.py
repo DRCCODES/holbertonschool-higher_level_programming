@@ -10,8 +10,9 @@ def text_indentation(text):
         if text[i] in [":",".","?"]:
             print("{:s}\n".format(text[i]).lstrip())
             i += 1
-            if text[i] == " ":
-                i += 1
+            if i < len(text):
+                if text[i] == " ":
+                    i += 1
         else:
             print("{:s}".format(text[i]), end="")
             i += 1

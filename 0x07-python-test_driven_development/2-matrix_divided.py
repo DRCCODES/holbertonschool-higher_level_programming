@@ -3,6 +3,7 @@
 
 
 def matrix_divided(matrix, div):
+    """ divide a matrix """
     nm = []
 
     if not isinstance(div, (int, float)):

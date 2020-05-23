@@ -3,6 +3,7 @@
 
 
 def print_square(size):
+    """ prints squares"""
     sq = []
 
     if not isinstance(size, (int)):
