@@ -1,26 +1,15 @@
 #!/usr/bin/python3
-"""  Simple rectangle """
+"""  documentation for rectangle class """
 
 
 class Rectangle:
     """ defines the rectangle """
 
     def __init__(self, width=0, height=0):
-        """ creats instance of rectangle """
+        """ sets instance of rectangle """
 
-        if not isinstance(width, int):
-            raise TypeError("width must be an integer")
-        elif width < 0:
-            raise ValueError("width must be >= 0")
-        else:
-            self.__width = width
-
-        if not isinstance(height, int):
-            raise TypeError("height must be an integer")
-        elif width < 0:
-            raise ValueError("height must be >= 0")
-        else:
-            self.__height = height
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
