@@ -66,3 +66,25 @@ class Rectangle:
             return 0
 
         return 2 * (self.__height + self.__width)
+
+    def __str__(self):
+        """ prints rectangle using str() """
+
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        rec = []
+        for h in range(self.__height):
+            for w in range(self.__width):
+                rec.append('#')
+            if h is not self.__height - 1:
+                rec.append("\n")
+        return "".join(rec)
+
+    def __repr__(self):
+        """ str created that works with eval() """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """ prints message when instance is deleted """
+
+        print("Bye rectangle...")
