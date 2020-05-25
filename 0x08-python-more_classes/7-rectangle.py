@@ -5,7 +5,7 @@
 class Rectangle:
     """ empty rectangle class """
     number_of_instances = 0
-    
+
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
@@ -25,6 +25,7 @@ class Rectangle:
         else:
             self.__height = height
         Rectangle.number_of_instances += 1
+
     @property
     def width(self):
         """ returns Width """
