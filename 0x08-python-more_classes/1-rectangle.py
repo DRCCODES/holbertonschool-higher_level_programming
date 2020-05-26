@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""  documentation for rectangle class """
+"""  Documentation for rectangle class """
 
 
 class Rectangle:
     """ defines the rectangle """
 
     def __init__(self, width=0, height=0):
-        """ sets instance of rectangle """
+        """ creates instance of rectangle """
 
         self.__width = width
         self.__height = height
@@ -18,7 +18,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """ sets width to value """
+        """ sets width of rectangle """
 
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -34,7 +34,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """ sets height to value """
+        """ sets height of rectangle """
 
         if type(value) is not int:
             raise TypeError("height must be an integer")
