@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Doc for Base Geometry """
+""" Doc for Base Geometry and Rectangle Class """
 
 
 class BaseGeometry:
