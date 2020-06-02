@@ -15,12 +15,12 @@ class BaseGeometry:
 
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format(name))
-        elif value <= 0:
+        if value <= 0:
             raise ValueError("{:s} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
-    """ Class Rectangle , in herits from BaseGeometry """
+    """ Class Rectangle , inherits from BaseGeometry """
 
     def __init__(self, width, height):
         """ Init of self, width and height """
