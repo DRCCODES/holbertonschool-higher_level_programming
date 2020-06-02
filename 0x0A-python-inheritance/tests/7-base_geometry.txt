@@ -1,0 +1,64 @@
+""" Documentation for Tests for 7-base_geometry """
+
+	>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+	>>> module_doc = __import__("7-base_geometry").__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> func_doc = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+	>>> print(len(func_doc) > 0)
+	True
+
+	>>> class_doc = __import__("7-base_geometry").BaseGeometry.__doc__
+     	>>> print(len(class_doc) > 0)
+     	True
+
+
+""" int and Value error tests """
+
+	>>> bg = BaseGeometry()
+     	>>> bg.integer_validator("int", 10)
+
+	>>> bg = BaseGeometry()
+     	>>> bg.integer_validator("int", 1000000)
+
+     	>>> bg = BaseGeometry()
+     	>>> bg.integer_validator("int", -1)
+	Traceback (most recent call last):
+     	ValueError: int must be greater than 0
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("int", 0)
+	Traceback (most recent call last):
+     	ValueError: int must be greater than 0
+
+""" Type Errors """
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("int", 1.5)
+	Traceback (most recent call last):
+     	TypeError: int must be an integer
+
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("int", [1, 2])
+     	Traceback (most recent call last):
+     	TypeError: int must be an integer
+
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("int", "Thing")
+	Traceback (most recent call last):
+     	TypeError: int must be an integer
+
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("int", (1 ,2))
+      	Traceback (most recent call last):
+ 	TypeError: int must be an integer
+
+""" Arg Errors """
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+     	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+	
