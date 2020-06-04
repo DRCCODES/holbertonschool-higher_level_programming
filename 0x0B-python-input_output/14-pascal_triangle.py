@@ -15,7 +15,7 @@ def pascal_triangle(n):
     pt.append(pr)
 
     if n == 1:
-        return triangle
+        return pt
     while row < n - 1:
         crow = []
         crow.append(pr[0])
