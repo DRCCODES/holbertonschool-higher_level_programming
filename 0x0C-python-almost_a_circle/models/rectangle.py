@@ -7,6 +7,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """ Rectangle Class """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """ init of Rectangle, x,y height width id """
 
@@ -79,3 +80,20 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
 
         self.__y = value
+
+    def area(self):
+        """returns are of rectangle"""
+
+        return self.__width * self.__height
+
+    def display(self):
+        """ prints out rectangle to stdout """
+
+       # for s in range(self.__height):
+       #     print()
+        for row in range(self.__height):
+          #  for lines in range(self.__height):
+          #     print(" ", end='')
+            for columns in range(self.__width):
+                print("#", end="")
+            print()
