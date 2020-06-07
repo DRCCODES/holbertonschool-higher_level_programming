@@ -89,11 +89,17 @@ class Rectangle(Base):
     def display(self):
         """ prints out rectangle to stdout """
 
-       # for s in range(self.__height):
-       #     print()
+        # for s in range(self.__height):
+        #     print()
         for row in range(self.__height):
-          #  for lines in range(self.__height):
-          #     print(" ", end='')
+            #  for lines in range(self.__height):
+            #   print(" ", end='')
             for columns in range(self.__width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """ Overload str to print wanted format """
+
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
