@@ -45,3 +45,11 @@ class Base:
                 as f:
             f.write(jstr)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """ returns list of JSON str rep """
+
+        if json_string is None or not json_string:
+            return []
+
+        return json.loads(json_string)
