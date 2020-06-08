@@ -131,4 +131,4 @@ class Rectangle(Base):
                     if key == "x":
                         self.x = kwargs["x"]
                     if key == "y":
-                        self.y = kwargs["x"]
+                        self.y = kwargs["y"]
