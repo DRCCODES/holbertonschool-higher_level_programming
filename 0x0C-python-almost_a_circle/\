@@ -138,9 +138,8 @@ class Rectangle(Base):
 
         dic = {}
 
-        dic["id"] = self.id
-        dic["width"] = self.width
-        dic["height"] = self.height
-        dic["x"] = self.x
-        dic["y"] = self.y
+        k = [j for j in dir(Rectangle) if not callable(Rectangle)]
+
+        for keys in k:
+            dic[str(keys)] = self.keys
         return dic
