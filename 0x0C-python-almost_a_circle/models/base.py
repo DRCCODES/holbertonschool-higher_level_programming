@@ -28,7 +28,7 @@ class Base:
             return "[]"
 
         return json.dumps(list_dictionaries)
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """ write JSON string to rep of listobj to file """
@@ -40,7 +40,7 @@ class Base:
             for item in list_objs:
                 listo.append(item.to_dictionary())
         jstr = Base.to_json_string(listo)
-        
+
         with open("{}.json".format(cls.__name__), mode="w")\
                 as f:
             f.write(jstr)
@@ -84,10 +84,3 @@ class Base:
             return insta_l
 
         return []
-
-
-
-
-
-
-
