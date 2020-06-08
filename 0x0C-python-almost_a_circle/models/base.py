@@ -53,3 +53,18 @@ class Base:
             return []
 
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ returns instance with attr set """
+
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls == Rectangle:
+            dummy = cls(7, 7)
+        if cls == Square:
+            dummy = cls(2)
+
+        dummy.update(**dictionary)
+        return dummy
