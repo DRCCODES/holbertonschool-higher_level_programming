@@ -19,7 +19,7 @@ class Square(Rectangle):
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)
 
-    @property    
+    @property
     def size(self):
         """ sets size of square """
 
@@ -59,3 +59,14 @@ class Square(Rectangle):
                         self.x = kwargs["x"]
                     if key == "y":
                         self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """ creats dict of attributes """
+
+        dic = {}
+
+        dic["id"] = self.id
+        dic["size"] = self.width
+        dic["x"] = self.x
+        dic["y"] = self.y
+        return dic
