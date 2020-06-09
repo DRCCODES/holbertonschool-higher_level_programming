@@ -5,14 +5,7 @@ import sys
 import io
 import unittest
 from models.base import Base
-from models import rectangle
 from models.rectangle import Rectangle
-
-Rectangle = Rectangle
-area = Rectangle.area
-display = Rectangle.display
-update = Rectangle.update
-to_dictionary = Rectangle.to_dictionary
 
 
 class TestRectangle(unittest.TestCase):
@@ -20,18 +13,16 @@ class TestRectangle(unittest.TestCase):
 
     def test_docs(self):
         """ Tests Func Docs """
-        self.assertTrue(len(rectangle.__doc__) > 0)
         self.assertTrue(len(Rectangle.__doc__) > 0)
-        self.assertTrue(len(area.__doc__) > 0)
-        self.assertTrue(len(display.__doc__) > 0)
-        self.assertTrue(len(update.__doc__) > 0)
-        self.assertTrue(len(to_dictionary.__doc__) > 0)
+        self.assertTrue(len(Rectangle.area.__doc__) > 0)
+        self.assertTrue(len(Rectangle.display.__doc__) > 0)
+        self.assertTrue(len(Rectangle.update.__doc__) > 0)
+        self.assertTrue(len(Rectangle.to_dictionary.__doc__) > 0)
 
     def test_getter_setter_id(self):
         """ Test Setter, Getter and Id """
 
         Base._Base__nb_objects = 0
-        sys.stdout = capout
 
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.id, 1)
