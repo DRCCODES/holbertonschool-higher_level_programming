@@ -5,6 +5,7 @@
 import json
 import os
 import csv
+from random import randrange as c
 
 
 class Base:
@@ -131,3 +132,33 @@ class Base:
                 nl.append(l)
         """
         return cls.load_from_file()
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ draws a rectangle or square """
+
+        pen = turtle.Turtle()
+        pen.screen.colormode(255)
+        for s in list_rectangles:
+            pen.penup()
+            pen.setx(s.x)
+            pen.sety(s.y)
+            pen.pendown()
+            for i in range(4):
+                pen.color(c(0, 256), c(0, 256), c(0, 256))
+                pen.forward(s.width)
+                pen.right(90)
+                pen.color(c(0, 256), c(0, 256), c(0, 256))
+                pen.forward(s.height)
+
+        for r in list_squares:
+            pen.penup()
+            pen.setx(s.x)
+            pen.sety(s.y)
+            pen.pendown()
+            for j in range(4):
+                pen.color(c(0, 256), c(0, 256), c(0, 256))
+                pen.forward(r.size)
+                pen.right(90)
+                pen.color(c(0, 256), c(0, 256), c(0, 256))
+                pen.forward(r.size)
