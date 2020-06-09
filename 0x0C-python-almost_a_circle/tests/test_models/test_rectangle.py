@@ -30,7 +30,6 @@ class TestRectangle(unittest.TestCase):
     def test_getter_setter_id(self):
         """ Test Setter, Getter and Id """
 
-        capout = io.StringIO()
         Base._Base__nb_objects = 0
         sys.stdout = capout
 
