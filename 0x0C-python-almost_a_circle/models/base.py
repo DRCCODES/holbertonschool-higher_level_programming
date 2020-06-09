@@ -7,7 +7,6 @@ import os
 import csv
 
 
-
 class Base:
     """ Base Class """
 
@@ -96,7 +95,7 @@ class Base:
 
         cls.save_to_file(list_objs)
         thing = cls.load_from_file()
-        with open (fn) as jsf:
+        with open(fn) as jsf:
             data = json.load(jsf)
         csf = open(fc, "w")
         csw = csv.writer(csf)
@@ -110,7 +109,7 @@ class Base:
                 cx = data[i]['x']
                 cy = data[i]['y']
                 csw.writerow([cid, cw, ch, cx, cy])
-        
+
         if cls == Square:
             csw.writerow(['id', 'size', 'x', 'y'])
             for i in range(len(data)):
@@ -132,4 +131,3 @@ class Base:
                 nl.append(l)
         """
         return cls.load_from_file()
-            
