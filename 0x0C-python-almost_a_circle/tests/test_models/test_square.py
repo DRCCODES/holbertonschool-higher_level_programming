@@ -15,4 +15,4 @@ to_dictionary = Square.to_dictionary
 
 
 class TestSquare(unittest.TestCase):
-    """ Unittest for Class Square
+    """ Unittest for Class Square """
