@@ -16,3 +16,10 @@ to_dictionary = Square.to_dictionary
 
 class TestSquare(unittest.TestCase):
     """ Unittest for Class Square """
+    
+    def test_docs(self):
+        """ Tests Func Docs """
+        self.assertTrue(len(square.__doc__) > 0)
+        self.assertTrue(len(Square.__doc__) > 0)
+        self.assertTrue(len(update.__doc__) > 0)
+        self.assertTrue(len(to_dictionary.__doc__) > 0)
