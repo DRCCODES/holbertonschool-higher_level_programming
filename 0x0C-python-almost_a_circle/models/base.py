@@ -4,6 +4,8 @@
 
 import json
 import os
+import csv
+
 
 
 class Base:
@@ -82,5 +84,52 @@ class Base:
                 for dic in insta_o:
                     insta_l.append(cls.create(**dic))
             return insta_l
-
         return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ save to file as csv """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        fn = "{}.json".format(cls.__name__)
+        fc = "{}.csv".format(cls.__name__)
+
+        cls.save_to_file(list_objs)
+        thing = cls.load_from_file()
+        with open (fn) as jsf:
+            data = json.load(jsf)
+        csf = open(fc, "w")
+        csw = csv.writer(csf)
+        if cls == Rectangle:
+
+            csw.writerow(['id', 'width', 'height', 'x', 'y'])
+            for i in range(len(data)):
+                cid = data[i]['id']
+                cw = data[i]['width']
+                ch = data[i]['height']
+                cx = data[i]['x']
+                cy = data[i]['y']
+                csw.writerow([cid, cw, ch, cx, cy])
+        
+        if cls == Square:
+            csw.writerow(['id', 'size', 'x', 'y'])
+            for i in range(len(data)):
+                cid = data[i]['id']
+                cw = data[i]['size']
+                cx = data[i]['x']
+                cy = data[i]['y']
+                csw.writerow([cid, cw, cx, cy])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ load csv return list """
+        """
+        fc = "{}.csv".format(cls.__name__)
+        nl = []
+        with open(fc, 'r') as f:
+            x = csv.reader(f, skipinitialspace=True)
+            for l in x:
+                nl.append(l)
+        """
+        return cls.load_from_file()
+            
