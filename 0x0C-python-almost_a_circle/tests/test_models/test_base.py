@@ -3,6 +3,7 @@
 
 
 import unittest
+import pep8
 from models.base import Base
 
 
@@ -38,6 +39,12 @@ class TestBaseClass(unittest.TestCase):
         bas = Base(100)
         self.assertEqual(bas.id, 100)
 
+    def test_pep8(self):
+        """ Test Pep Checks? """
+
+        pepboy = pep8.StyleGuide(quiet=True)
+        fallout = pepboy.check_files(["models/base.py"])
+        self.assertEqual(fallout.total_errors, 0)
 
 if __name__ == '__main__':
     unittest.main()

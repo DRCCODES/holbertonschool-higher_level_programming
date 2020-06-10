@@ -3,6 +3,7 @@
 
 
 import unittest
+import pep8
 import io
 import sys
 from models.base import Base
@@ -18,6 +19,13 @@ class TestSquare(unittest.TestCase):
         self.assertTrue(len(Square.__doc__) > 0)
         self.assertTrue(len(Square.update.__doc__) > 0)
         self.assertTrue(len(Square.to_dictionary.__doc__) > 0)
+    
+    def test_pep8(self):
+        """ Test Pep Checks? """
+
+        pepboy = pep8.StyleGuide(quiet=True)
+        fallout = pepboy.check_files(["models/square.py"])
+        self.assertEqual(fallout.total_errors, 0)
 
 if __name__ == '__main__':
         unittest.main()
