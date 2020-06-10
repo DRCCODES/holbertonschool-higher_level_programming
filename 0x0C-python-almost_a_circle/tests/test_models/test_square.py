@@ -18,3 +18,6 @@ class TestSquare(unittest.TestCase):
         self.assertTrue(len(Square.__doc__) > 0)
         self.assertTrue(len(Square.update.__doc__) > 0)
         self.assertTrue(len(Square.to_dictionary.__doc__) > 0)
+
+if __name__ == '__main__':
+        unittest.main()
